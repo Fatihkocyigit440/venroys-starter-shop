@@ -94,3 +94,5 @@ npm test && npm run typecheck && npm run build
   checkout code.
 
 Built with Next.js 16, React 19 and TypeScript. Started from the new-tu shop, which sells on Venroys.
+
+MIT licensed: use it, change it and sell with it. See [LICENSE](LICENSE).

@@ -3,9 +3,8 @@
 A ready-made online shop for your Venroys store. Copy it, add your two Venroys keys, and put it online.
 Customers browse your products, put them in a bag and pay through Venroys.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOWNER%2Fvenroys-starter-shop&env=VENROYS_PUBLISHABLE_KEY,VENROYS_SECRET_KEY&envDescription=Your%20two%20Venroys%20keys%20from%20Venroys%20%E2%86%92%20Developers%20%E2%86%92%20API%20keys&envLink=https%3A%2F%2Fgithub.com%2FOWNER%2Fvenroys-starter-shop%232-add-your-keys&project-name=my-shop)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FFatihkocyigit440%2Fvenroys-starter-shop&env=VENROYS_PUBLISHABLE_KEY,VENROYS_SECRET_KEY&envDescription=Your%20two%20Venroys%20keys%20from%20Venroys%20%E2%86%92%20Developers%20%E2%86%92%20API%20keys&envLink=https%3A%2F%2Fgithub.com%2FFatihkocyigit440%2Fvenroys-starter-shop%232-add-your-keys&project-name=my-shop)
 
-<!-- Replace OWNER in the button link with the GitHub account that hosts this template. -->
 
 ## What you get
 

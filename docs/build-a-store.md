@@ -34,11 +34,37 @@ pending"). Then:
    creates a real order.
 3. Skip step 7. In step 10 the user's own first real order is the payment test; they refund it afterwards.
 
-## 0. Ask the user (one message)
+## 0. Get the store brief first
 
-1. The shop's name, what it sells, and the look they want (colors, mood, a site they like).
-2. Do they already sell on Venroys (products, delivery and payments set up), or are they starting fresh?
-3. The web address they will use, if they have one.
+Don't start building from a one-line request like *"I want a fully working webshop."* First get a filled-in
+[store brief](store-brief.md).
+
+1. **Look for a brief.** If the user pasted one, or there is a `store-brief.md` in the working folder with the
+   **(required)** lines filled in, go to point 3.
+2. **Otherwise, hand it out and stop.** Send the user the brief (the full text of
+   [store-brief.md](store-brief.md), or the raw link
+   `https://raw.githubusercontent.com/Venroys/venroys-starter-shop/main/docs/store-brief.md`) with one short line:
+   *"Fill this in (about 15 minutes) and send it back, or save it as store-brief.md here. Leave out anything
+   you're unsure about; I'll pick defaults."* Then end your turn. Don't copy the starter or change anything yet.
+3. **When it comes back,** ask only about missing **(required)** lines, in one message. Never ask for keys,
+   passwords or bank details; if the brief contains any, tell the user to remove them and create new keys.
+4. **Confirm the plan in one message:** what you will build, which defaults you picked for empty lines, which
+   Venroys changes you will propose (products, delivery prices, collections), and the five things the user does
+   themselves (see the table above). Start with step 1 once they say yes.
+
+Keep the brief in the project as `store-brief.md` (it has no secrets) so later sessions build from the same
+answers. Where the brief maps onto settings:
+
+| Brief | Goes to |
+|---|---|
+| 1. Shop, 7. Pages and texts | `shop.config.ts` (`name`, `tagline`, `home`, `about`, `contact`, `legalName`, `address`, `returns`, `locale`, `currency`) |
+| 2. Venroys account | Which of steps 2–4 and "No sandbox yet?" apply |
+| 3. Products | Step 4: `create_draft_product`, `upload_product_image`, `update_product_size_chart`, `create_collection` |
+| 4. Delivery | Step 4: `save_shipping_zone`; wording in `shop.shipping.lines` |
+| 5. Payment and checkout | `NEXT_PUBLIC_VENROYS_CHECKOUT_MODE`; payment methods are the user's job in the dashboard |
+| 6. Look and feel | `shop.theme`; a logo, fonts or layout changes are code changes in `components/` and `app/` |
+| 8. Web address | `NEXT_PUBLIC_SITE_URL`, the publishable key's allowed origins, step 8 |
+| 9. When is it done | Your checklist for the final report |
 
 ## 1. Copy the starter
 

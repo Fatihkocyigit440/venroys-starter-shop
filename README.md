@@ -29,7 +29,9 @@ Build me a webshop for my Venroys store from github.com/Venroys/venroys-starter-
 Follow its docs/build-a-store.md. Start in the Venroys sandbox.
 ```
 
-The agent copies the starter, connects to your store through the Venroys MCP server, sets up products and
+The agent first gives you the [store brief](docs/store-brief.md): about 15 minutes of questions on your products,
+delivery, look and pages. Fill it in and send it back. Or fill it in beforehand, save it as `store-brief.md` in
+the folder and add *"Use my store-brief.md"* to the prompt. Then the agent copies the starter, connects to your store through the Venroys MCP server, sets up products and
 delivery with your approval, makes the site yours, tests a purchase with a test card and deploys it. You approve
 the connection, type your keys into `npm run setup` in your own terminal (never into the chat), finish payments
 onboarding in Venroys, and place the first real order. The full playbook is in

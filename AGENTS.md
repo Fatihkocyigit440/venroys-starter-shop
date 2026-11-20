@@ -5,7 +5,9 @@ and shopper accounts; this app keeps no database.
 
 ## Building a store for a user
 
-Follow [docs/build-a-store.md](docs/build-a-store.md) step by step: copy the starter, connect the Venroys MCP
+Follow [docs/build-a-store.md](docs/build-a-store.md) step by step. **Start with step 0:** if the user hasn't
+given you a filled-in [store brief](docs/store-brief.md), hand them the brief and wait for it before building
+anything. Then: copy the starter, connect the Venroys MCP
 server (sandbox first), set up the store with the user's approval, make it theirs in `shop.config.ts`, run
 `npm run check -- --json`, test a purchase, deploy, go live. Never ask for API keys in the chat: the user runs
 `npm run setup` in their own terminal.

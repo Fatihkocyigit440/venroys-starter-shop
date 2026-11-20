@@ -5,6 +5,8 @@ description: Build and launch a webshop for the user's Venroys store from this s
 
 Follow [docs/build-a-store.md](../../../docs/build-a-store.md) step by step. Keep its rules:
 
+- Start with step 0. Without a filled-in [store brief](../../../docs/store-brief.md) (pasted, or
+  `store-brief.md` in the folder), send the user the brief and end your turn. Build only from their answers.
 - Never ask for API keys in the chat. The user runs `! npm run setup` in their own terminal.
 - Ask before every change in the Venroys store, and say exactly what will change.
 - Work in the sandbox (`venroys-sandbox` MCP server, `vr_*_test_` keys) until a test purchase is paid.

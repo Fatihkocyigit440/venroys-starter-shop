@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Venroys/venroys-starter-shop.git"
+  },
+  "homepage": "https://docs.venroys.com/developers/getting-started",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

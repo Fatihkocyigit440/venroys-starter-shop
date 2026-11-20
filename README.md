@@ -3,7 +3,7 @@
 A ready-made online shop for your Venroys store. Copy it, add your two Venroys keys, and put it online.
 Customers browse your products, put them in a bag and pay through Venroys.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FFatihkocyigit440%2Fvenroys-starter-shop&env=VENROYS_PUBLISHABLE_KEY,VENROYS_SECRET_KEY&envDescription=Your%20two%20Venroys%20keys%20from%20Venroys%20%E2%86%92%20Developers%20%E2%86%92%20API%20keys&envLink=https%3A%2F%2Fgithub.com%2FFatihkocyigit440%2Fvenroys-starter-shop%232-add-your-keys&project-name=my-shop)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FVenroys%2Fvenroys-starter-shop&env=VENROYS_PUBLISHABLE_KEY,VENROYS_SECRET_KEY&envDescription=Your%20two%20Venroys%20keys%20from%20Venroys%20%E2%86%92%20Developers%20%E2%86%92%20API%20keys&envLink=https%3A%2F%2Fgithub.com%2FVenroys%2Fvenroys-starter-shop%232-add-your-keys&project-name=my-shop)
 
 
 ## What you get
@@ -73,6 +73,12 @@ The shop can't change these for you; the setup page reminds you:
 | `NEXT_PUBLIC_VENROYS_CHECKOUT_MODE` | `hosted` (default, Venroys payment page) or `embedded` (pay on your site) |
 | `VENROYS_WEBHOOK_SECRETS` | Signing secrets for `/api/webhooks/venroys`, so product changes show up instantly instead of within 30 seconds |
 | `SESSION_SECRET` | 32+ random characters; keeps shoppers' bags linked when you replace your secret key |
+
+## For AI coding agents
+
+Read [AGENTS.md](AGENTS.md) first, then [docs/venroys.md](docs/venroys.md) and
+https://docs.venroys.com/llms.txt. Shop-specific changes go in `shop.config.ts`; checkout rules are in the
+"Things that surprise people" list.
 
 ## For developers
 

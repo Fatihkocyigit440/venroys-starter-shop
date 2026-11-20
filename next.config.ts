@@ -7,6 +7,9 @@ const publishable =
   "";
 const config: NextConfig = {
   devIndicators: false,
+  // Venroys sandbox keys accept http://127.0.0.1 and http://[::1] (not localhost), so the dev
+  // server must serve its scripts to those addresses too.
+  allowedDevOrigins: ["127.0.0.1", "[::1]"],
   env: {
     NEXT_PUBLIC_VENROYS_PUBLISHABLE_KEY: publishable,
     NEXT_PUBLIC_VENROYS_API_ORIGIN:

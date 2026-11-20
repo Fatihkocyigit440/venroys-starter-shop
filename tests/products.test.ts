@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   available,
   demoShippingCents,
+  sortSizes,
   demoProducts as products,
   fromVenroys,
   sanitizeBag,
@@ -102,4 +103,17 @@ test("checkout redirects only to Venroys over HTTPS", () => {
     "javascript:alert(1)",
   ])
     assert.throws(() => trustedCheckoutUrl(bad));
+});
+
+test("sizes show smallest to largest within each color", () => {
+  assert.deepEqual(
+    sortSizes(["stone / m", "stone / 2xl", "stone / l", "stone / xl", "stone / s"]),
+    ["stone / s", "stone / m", "stone / l", "stone / xl", "stone / 2xl"],
+  );
+  assert.deepEqual(
+    sortSizes(["black / l", "white / s", "black / xs", "white / xxl"]),
+    ["black / xs", "black / l", "white / s", "white / xxl"],
+  );
+  assert.deepEqual(sortSizes(["42", "38", "40"]), ["38", "40", "42"]);
+  assert.deepEqual(sortSizes(["one size"]), ["one size"]);
 });

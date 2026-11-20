@@ -171,6 +171,32 @@ const https = (url?: string | null) => {
     return null;
   }
 };
+// Venroys returns variants in the order they were created ("m, 2xl, l, xl, s"). Show them the
+// way shoppers expect: grouped by color in first-seen order, then smallest to largest. Labels
+// look like "stone / m"; numeric sizes sort by number; unknown sizes keep their place.
+const SIZE_ORDER = ["xxs", "xs", "s", "m", "l", "xl", "2xl", "3xl", "4xl", "5xl"];
+const SIZE_ALIASES: Record<string, string> = { xxl: "2xl", xxxl: "3xl", "one size": "m" };
+export function sortSizes(labels: string[]) {
+  const colorOf = (label: string) => (label.includes(" / ") ? label.slice(0, label.lastIndexOf(" / ")) : "");
+  const sizeOf = (label: string) =>
+    (label.includes(" / ") ? label.slice(label.lastIndexOf(" / ") + 3) : label).replace(/ \(\d+\)$/, "");
+  const colors = [...new Set(labels.map(colorOf))];
+  const rank = (label: string) => {
+    const size = sizeOf(label);
+    const named = SIZE_ORDER.indexOf(SIZE_ALIASES[size] ?? size);
+    if (named >= 0) return named;
+    const n = parseFloat(size);
+    return Number.isFinite(n) ? 100 + n : Infinity;
+  };
+  return labels
+    .map((label, i) => ({ label, i }))
+    .sort((a, b) =>
+      colors.indexOf(colorOf(a.label)) - colors.indexOf(colorOf(b.label)) ||
+      (rank(a.label) === rank(b.label) ? a.i - b.i : rank(a.label) - rank(b.label)) ||
+      a.i - b.i,
+    )
+    .map((x) => x.label);
+}
 export function fromVenroys(
   raw: VenroysProduct,
   index: number,
@@ -193,7 +219,7 @@ export function fromVenroys(
       soldOut: v.available === false || v.stock === 0,
     };
   }
-  const sizes = Object.keys(variants);
+  const sizes = sortSizes(Object.keys(variants));
   if (!name || !raw.slug || !sizes.length) return null;
   const sources = [
     raw.image_url,

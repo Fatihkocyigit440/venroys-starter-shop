@@ -23,6 +23,17 @@ The user does five things themselves. Everything else is yours.
 - Read [venroys.md → Things that surprise people](venroys.md#things-that-surprise-people) before you change
   checkout code.
 
+## No sandbox yet?
+
+Some accounts don't have the practice store yet (no **Test sandbox** in the store menu, or it says "setup
+pending"). Then:
+
+1. Tell the user to ask Venroys to enable it (info@venroys.com). It is the only way to test payments safely.
+2. Meanwhile, work with **live** keys but change nothing that costs money: run `npm run check`, run the shop
+   locally and click through it up to the checkout page. **Do not submit the checkout form**: in live mode it
+   creates a real order.
+3. Skip step 7. In step 10 the user's own first real order is the payment test; they refund it afterwards.
+
 ## 0. Ask the user (one message)
 
 1. The shop's name, what it sells, and the look they want (colors, mood, a site they like).
@@ -88,7 +99,7 @@ Change `shop.config.ts` only: name, tagline, texts, colors, returns and shipping
 npm run dev
 ```
 
-Open http://127.0.0.1:3000 and check the home page, a product page, the bag and `/setup`.
+Open http://127.0.0.1:3000 (not `localhost`: sandbox keys only accept `127.0.0.1`) and check the home page, a product page, the bag and `/setup`.
 Product photos beyond the first go in `public/products/` and `shop.extraPhotos`.
 
 ## 6. Ready-to-sell check

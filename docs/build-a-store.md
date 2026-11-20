@@ -37,13 +37,13 @@ pending"). Then:
 ## 0. Get the store brief first
 
 Don't start building from a one-line request like *"I want a fully working webshop."* First get a filled-in
-[store brief](store-brief.md).
+[store brief](store-brief.md). It is published at https://docs.venroys.com/developers/build-with-ai.
 
 1. **Look for a brief.** If the user pasted one, or there is a `store-brief.md` in the working folder with the
    **(required)** lines filled in, go to point 3.
 2. **Otherwise, hand it out and stop.** Send the user the brief (the full text of
-   [store-brief.md](store-brief.md), or the raw link
-   `https://raw.githubusercontent.com/Venroys/venroys-starter-shop/main/docs/store-brief.md`) with one short line:
+   [store-brief.md](store-brief.md), or the link `https://docs.venroys.com/developers/store-brief.md`) with one
+   short line:
    *"Fill this in (about 15 minutes) and send it back, or save it as store-brief.md here. Leave out anything
    you're unsure about; I'll pick defaults."* Then end your turn. Don't copy the starter or change anything yet.
 3. **When it comes back,** ask only about missing **(required)** lines, in one message. Never ask for keys,

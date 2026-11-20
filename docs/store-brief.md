@@ -5,7 +5,8 @@ build the whole shop in one go instead of asking you questions all day.
 
 **How to use it**
 
-1. Copy this file, or ask your agent: *"Give me the Venroys store brief."*
+1. Copy this file (also at https://docs.venroys.com/developers/store-brief.md), or ask your agent:
+   *"Give me the Venroys store brief."*
 2. Fill in what you know. Lines marked **(required)** are needed. Leave anything else empty: the agent picks a
    sensible default and tells you which ones it picked.
 3. Give it back to the agent: paste it into the chat, or save it as `store-brief.md` in your shop folder and say

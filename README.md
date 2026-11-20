@@ -20,6 +20,26 @@ Customers browse your products, put them in a bag and pay through Venroys.
 Until you add keys and publish a product, the shop shows four demo products so you can click around. Their
 checkout is a walkthrough and never takes payment.
 
+## Let an AI agent build it
+
+Using Claude Code or Codex? Paste this into it, in an empty folder:
+
+```text
+Build me a webshop for my Venroys store from github.com/Venroys/venroys-starter-shop.
+Follow its docs/build-a-store.md. Start in the Venroys sandbox.
+```
+
+The agent copies the starter, connects to your store through the Venroys MCP server, sets up products and
+delivery with your approval, makes the site yours, tests a purchase with a test card and deploys it. You approve
+the connection, type your keys into `npm run setup` in your own terminal (never into the chat), finish payments
+onboarding in Venroys, and place the first real order. The full playbook is in
+[docs/build-a-store.md](docs/build-a-store.md).
+
+- **Claude Code** finds the Venroys MCP servers in `.mcp.json` and the `build-venroys-store` skill
+  automatically.
+- **Codex** reads `AGENTS.md`. Add the MCP server to `~/.codex/config.toml`:
+  `[mcp_servers.venroys-sandbox]` with `url = "https://sandbox.venroys.com/api/mcp"`.
+
 ## Get your shop online in 4 steps
 
 ### 1. Copy it
@@ -83,7 +103,7 @@ https://docs.venroys.com/llms.txt. Shop-specific changes go in `shop.config.ts`;
 ## For developers
 
 ```sh
-cp .env.example .env.local   # add your keys
+npm run setup                # type your two keys (saved in .env.local)
 npm install
 npm run dev                  # http://localhost:3000
 npm run check                # is this shop ready to sell?

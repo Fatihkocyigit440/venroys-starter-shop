@@ -3,6 +3,13 @@
 This is a Next.js storefront for one Venroys store. Venroys holds products, prices, stock, carts, payments, orders
 and shopper accounts; this app keeps no database.
 
+## Building a store for a user
+
+Follow [docs/build-a-store.md](docs/build-a-store.md) step by step: copy the starter, connect the Venroys MCP
+server (sandbox first), set up the store with the user's approval, make it theirs in `shop.config.ts`, run
+`npm run check -- --json`, test a purchase, deploy, go live. Never ask for API keys in the chat: the user runs
+`npm run setup` in their own terminal.
+
 ## Before you change anything
 
 - Shop-specific text, colors and settings belong in `shop.config.ts`, not in components.
@@ -25,7 +32,7 @@ and shopper accounts; this app keeps no database.
 npm test
 npm run typecheck
 npm run build
-npm run check   # reads only; needs keys in .env.local
+npm run check   # reads only; needs keys in .env.local; add -- --json for machine-readable output
 ```
 
 <!-- BEGIN:nextjs-agent-rules -->

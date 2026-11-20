@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "venroys-sandbox": {
+      "type": "http",
+      "url": "https://sandbox.venroys.com/api/mcp"
+    },
+    "venroys": {
+      "type": "http",
+      "url": "https://venroys.com/api/mcp"
+    }
+  }
+}

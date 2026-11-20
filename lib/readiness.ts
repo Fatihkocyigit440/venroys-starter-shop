@@ -55,7 +55,7 @@ export async function runChecks(env = process.env): Promise<Check[]> {
   const mode = keyMode(pk);
   checks.push({
     status: "ok",
-    title: mode === "test" ? "Keys work in the practice store" : "Live keys added",
+    title: mode === "test" ? "Test keys added" : "Live keys added",
     detail:
       mode === "test"
         ? "Test keys: payments use fake cards and no money moves. Switch to live keys to sell."

@@ -9,10 +9,15 @@ if (existsSync(".env.local"))
 
 const { runChecks } = await import("../lib/readiness.ts");
 const checks = await runChecks();
+const todo = checks.filter((c) => c.status === "todo").length;
+// --json: for scripts and AI agents. ready is true when nothing checkable is missing.
+if (process.argv.includes("--json")) {
+  console.log(JSON.stringify({ ready: todo === 0, checks }, null, 2));
+  process.exit(todo ? 1 : 0);
+}
 const mark = { ok: "✓", todo: "✗", manual: "?" } as const;
 console.log("\nIs this shop ready to sell?\n");
 for (const c of checks) console.log(`${mark[c.status]} ${c.title}\n  ${c.detail}\n`);
-const todo = checks.filter((c) => c.status === "todo").length;
 console.log(
   todo
     ? `${todo} thing${todo === 1 ? "" : "s"} to fix (✗). Items marked ? can only be checked in Venroys.`
